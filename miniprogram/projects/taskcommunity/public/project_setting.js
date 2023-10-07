@@ -37,7 +37,7 @@ module.exports = { //物业小区 taskcommunity
 		{ mark: 'type', title: '上报类型', type: 'select', selectOptions: ['蓝屏死机', '无法启动', '运行缓慢', '显示异常', '声音问题', '电源问题', '病毒感染', '服务投诉', '热心建议', '其他事项'], must: true },
 		{ mark: 'title', title: '标题', type: 'text', must: true },
 		{ mark: 'level', title: '优先级', type: 'radio', selectOptions: ['紧急', '一般', '次要'], must: true, ext: { show: 'row' } },
-		{ mark: 'building', title: '楼栋房号', type: 'text', must: true },
+		{ mark: 'building', title: '楼栋教室号', type: 'text', must: true },
 		{ mark: 'person', title: '联系人', type: 'text', must: true },
 		{ mark: 'phone', title: '联系电话', type: 'text', must: true },
 		{ mark: 'desc', title: '详细说明', type: 'textarea', must: true },

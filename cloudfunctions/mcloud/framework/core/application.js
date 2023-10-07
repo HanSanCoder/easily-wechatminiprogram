@@ -71,8 +71,9 @@ async function app(event, context) {
 		}
 
 		let routesArr = routes[r].split('@');
-
+		//控制层
 		let controllerName = routesArr[0];
+		//方法名
 		let actionName = routesArr[1];
 
 		// 事前处理
@@ -174,14 +175,14 @@ async function app(event, context) {
 }
 
 // 事前处理
-function beforeApp(method) {
-	switch (method) {
-		case 'demo': {
-			return appUtil.handlerAppErr('本系统仅为用户体验演示，后台提交的操作均不生效！如有需要请联系作者微信cclinux0730', appCode.LOGIC);
-		}
-	}
-	console.error('事前处理, Method Not Find = ' + method);
-}
+// function beforeApp(method) {
+// 	switch (method) {
+// 		case 'demo': {
+// 			return appUtil.handlerAppErr('本系统仅为用户体验演示，后台提交的操作均不生效！如有需要请联系作者微信cclinux0730', appCode.LOGIC);
+// 		}for(auto str1 : strs)
+// 	}
+// 	console.error('事前处理, Method Not Find = ' + method);
+// }
 
 // 展示当前输入数据
 function showEvent(event) {

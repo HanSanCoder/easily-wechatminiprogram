@@ -22,8 +22,8 @@
 
 	</view>
 
-	<view class="foot-bottom">
+	<!-- <view class="foot-bottom">
 		<cmpt-foot />
-	</view>
+	</view> -->
 
 </view>
