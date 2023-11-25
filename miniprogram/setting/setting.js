@@ -1,6 +1,6 @@
 ﻿module.exports = {
 	//### 环境相关 
-	CLOUD_ID: 'hansancloud-6gma5uw1e8b42b52', //云服务id ,本地测试环境 
+	CLOUD_ID: 'cloud1-1g59etj08e69cc9d', //云服务id ,本地测试环境 
 
 	// #### 版本信息 
 	VER: 'build 2023.03.14',

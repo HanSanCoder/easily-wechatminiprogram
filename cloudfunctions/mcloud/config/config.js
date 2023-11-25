@@ -1,7 +1,7 @@
 module.exports = {
 
 	//### 环境相关 
-	CLOUD_ID: 'hansancloud-6gma5uw1e8b42b52', //你的云环境id   
+	CLOUD_ID: 'cloud1-1g59etj08e69cc9d', //你的云环境id   
 
 	// ##################################################################   
 	COLLECTION_PRFIX: 'bx_',
