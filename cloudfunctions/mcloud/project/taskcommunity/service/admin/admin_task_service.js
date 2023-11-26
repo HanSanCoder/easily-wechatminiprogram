@@ -12,6 +12,7 @@ const timeUtil = require('../../../../framework/utils/time_util.js');
 const dataUtil = require('../../../../framework/utils/data_util.js');
 const TaskModel = require('../../model/task_model.js');
 const UserModel = require('../../model/user_model.js');
+// const  {TextSchema}  = require('XrFrame/components');
 
 // 导出数据KEY
 const EXPORT_TASK_DATA_KEY = 'EXPORT_TASK_DATA';
@@ -73,7 +74,7 @@ class AdminTaskService extends BaseProjectAdminService {
 		}
 
 		let result = await TaskModel.getList(where, fields, orderBy, page, size, true, oldTotal, false);
-
+		console.log("这是获取订单的RESULT");
 
 		// 为导出增加一个参数condition
 		result.condition = encodeURIComponent(JSON.stringify(where));
@@ -83,7 +84,10 @@ class AdminTaskService extends BaseProjectAdminService {
 
 	/**修改状态 */
 	async statusTask(id, status) {
-		this.AppError('[报修]该功能暂不开放，如有需要请加作者微信：cclinux0730');
+		let data = {
+			TASK_STATUS: status,
+		}
+		TaskModel.edit(id, data);
 	}
 
 	// #####################导出数据
@@ -100,9 +104,7 @@ class AdminTaskService extends BaseProjectAdminService {
 
 	/**导出数据 */
 	async exportTaskDataExcel(condition, fields) {
-
-		this.AppError('[报修]该功能暂不开放，如有需要请加作者微信：cclinux0730');
-
+		return await exportUtil.exportDataExcel(EXPORT_TASK_DATA_KEY, condition, condition, fields);
 	}
 
 }

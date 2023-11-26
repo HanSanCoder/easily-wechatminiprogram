@@ -87,13 +87,12 @@ class AdminUserService extends BaseProjectAdminService {
 	}
 
 	async statusUser(id, status, reason) {
-		this.AppError('[报修]该功能暂不开放，如有需要请加作者微信：cclinux0730');
+		UserModel.statusUser(id, status, reason);
 	}
 
 	/**删除用户 */
 	async delUser(id) {
-		this.AppError('[报修]该功能暂不开放，如有需要请加作者微信：cclinux0730');
-
+		UserModel.del(id);
 	}
 
 	// #####################导出用户数据

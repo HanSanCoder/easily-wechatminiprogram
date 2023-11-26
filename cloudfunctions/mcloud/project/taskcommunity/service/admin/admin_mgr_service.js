@@ -155,7 +155,10 @@ class AdminMgrService extends BaseProjectAdminService {
 
 	/** 删除管理员 */
 	async delMgr(id, myAdminId) {
-		this.AppError('[报修]该功能暂不开放，如有需要请加作者微信：cclinux0730');
+		let data = {
+			ADMIN_ID: myAdminId,
+		}
+		AdminModel.del(id, data);
 	}
 
 	/** 添加新的管理员 */
@@ -165,13 +168,22 @@ class AdminMgrService extends BaseProjectAdminService {
 		phone,
 		password
 	}) {
-		this.AppError('[报修]该功能暂不开放，如有需要请加作者微信：cclinux0730');
-
+		let data = {
+		ADMIN_NAME: name,
+		ADMIN_DESC: desc,
+		ADMIN_PHONE: phone,
+		ADMIN_PASSWORD: password
+		}
+		AdminModel.insert(data);
 	}
 
 	/** 修改状态 */
 	async statusMgr(id, status, myAdminId) {
-		this.AppError('[报修]该功能暂不开放，如有需要请加作者微信：cclinux0730');
+		let data = {
+			ADMIN_STATUS: status,
+			ADMIN_ID: myAdminId,
+		}
+		AdminModel.edit(id, data);
 	} 
  
 
@@ -195,14 +207,21 @@ class AdminMgrService extends BaseProjectAdminService {
 		phone,
 		password
 	}) {
-
-		this.AppError('[报修]该功能暂不开放，如有需要请加作者微信：cclinux0730');
+		let data = {
+			ADMIN_NANE: name,
+			ADMIN_DESC: desc,
+			ADMIN_PHONE: phone,
+			ADMIN_PASSWORD: password
+			}
+			AdminModel.edit(id, data);
 	}
 
 	/** 修改自身密码 */
 	async pwdtMgr(adminId, oldPassword, password) {
-
-		this.AppError('[报修]该功能暂不开放，如有需要请加作者微信：cclinux0730');
+		let data = {
+			ADMIN_PASSWORD: password,
+		}
+		AdminModel.edit(adminId, data);
 	}
 }
 

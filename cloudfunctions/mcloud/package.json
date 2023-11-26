@@ -12,6 +12,6 @@
         "date-utils": "^1.2.21",
         "mysql": "^2.18.1",
         "node-xlsx": "^0.16.1",
-        "wx-server-sdk": "~2.1.2"
+        "wx-server-sdk": "^2.6.3"
     }
 }

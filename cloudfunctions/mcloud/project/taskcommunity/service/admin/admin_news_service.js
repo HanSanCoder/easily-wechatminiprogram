@@ -17,7 +17,10 @@ class AdminNewsService extends BaseProjectAdminService {
 
 	/** 推荐首页SETUP */
 	async vouchNewsSetup(id, vouch) {
-		this.AppError('[报修]该功能暂不开放，如有需要请加作者微信：cclinux0730');
+		let data = {
+			NEWS_VOUCH: vouch,
+		}
+		NewsModel.insertOrUpdate(id, data);
 	}
 
 	/**添加资讯 */
@@ -29,15 +32,20 @@ class AdminNewsService extends BaseProjectAdminService {
 		desc = '',
 		forms
 	}) {
-
-
-		this.AppError('[报修]该功能暂不开放，如有需要请加作者微信：cclinux0730');
+		let data = {
+			NEWS_TITLE: title,
+			NEWS_CATE_ID: cateId,
+			NEWS_CATE_NAME: cateName,
+			NEWS_ORDER: order,
+			NEWS_DESC: desc,
+			NEWS_FORMS: forms,
+			NEWS_PIC: ["/images/cover.gif"],		}
+		NewsModel.insert(data);
 	}
 
 	/**删除资讯数据 */
 	async delNews(id) {
-		this.AppError('[报修]该功能暂不开放，如有需要请加作者微信：cclinux0730');
-
+		NewsModel.del(id);
 	}
 
 	/**获取资讯信息 */
@@ -58,7 +66,10 @@ class AdminNewsService extends BaseProjectAdminService {
 		id,
 		hasImageForms
 	}) {
-		this.AppError('[报修]该功能暂不开放，如有需要请加作者微信：cclinux0730');
+		let data = {
+			NEWS_PIC: hasImageForms,
+		}
+		NewsModel.insertOrUpdate(id, data);
 	}
 
 
@@ -70,9 +81,10 @@ class AdminNewsService extends BaseProjectAdminService {
 		id,
 		content // 富文本数组
 	}) {
-
-		this.AppError('[报修]该功能暂不开放，如有需要请加作者微信：cclinux0730');
-
+		let data = {
+			NEWS_CONTENT: content,
+		}
+		NewsModel.insertOrUpdate(id, data);
 	}
 
 	/**
@@ -83,9 +95,10 @@ class AdminNewsService extends BaseProjectAdminService {
 		id,
 		imgList // 图片数组
 	}) {
-
-		this.AppError('[报修]该功能暂不开放，如有需要请加作者微信：cclinux0730');
-
+		let data = {
+			NEWS_PIC: imgList,
+		}
+		NewsModel.insertOrUpdate(id, data);
 	}
 
 
@@ -99,8 +112,15 @@ class AdminNewsService extends BaseProjectAdminService {
 		desc = '',
 		forms
 	}) {
-
-		this.AppError('[报修]该功能暂不开放，如有需要请加作者微信：cclinux0730');
+		let data = {
+		NEWS_TITLE: title,
+		NEWS_CATE_ID: cateId, 
+		NEWS_CATE_NAME:cateName,
+		NEWS_ORDER: order,
+		NEWS_DESC: desc ,
+		NEWS_FORMS: forms
+		}
+		NewsModel.edit(id, data);
 	}
 
 	/**取得资讯分页列表 */
@@ -164,17 +184,27 @@ class AdminNewsService extends BaseProjectAdminService {
 
 	/**修改资讯状态 */
 	async statusNews(id, status) {
-		this.AppError('[报修]该功能暂不开放，如有需要请加作者微信：cclinux0730');
+		let data = {
+			NEWS_STATUS: status,
+		}
+		NewsModel.edit(id, data)
 	}
 
 	/**置顶与排序设定 */
 	async sortNews(id, sort) {
-		this.AppError('[报修]该功能暂不开放，如有需要请加作者微信：cclinux0730');
+		let data = {
+			NEWS_ORDER: sort,
+		}
+		NewsModel.edit(id, data);
 	}
 
 	/**首页设定 */
 	async vouchNews(id, vouch) {
-		this.AppError('[报修]该功能暂不开放，如有需要请加作者微信：cclinux0730');
+		let data = {
+			NEWS_VOUCH: vouch,
+		}
+		NewsModel.edit(id, data);
+		// this.AppError('[报修]该功能暂不开放，如有需要请加作者微信：cclinux0730');
 	}
 }
 

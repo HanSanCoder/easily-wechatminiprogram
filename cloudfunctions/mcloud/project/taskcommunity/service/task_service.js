@@ -35,11 +35,13 @@ class TaskService extends BaseProjectService {
 
 
 	/**添加 */
-	async insertTask(userId, {
-		forms
-	}) {
-
-		this.AppError('[报修]该功能暂不开放，如有需要请加作者微信：cclinux0730');
+	async insertTask(userId,{forms}) {
+		let data = {
+			TASK_USER_ID: userId,
+			TASK_OBJ:dataUtil.dbForms2Obj(forms),
+			TASK_FORMS:forms,
+		}
+		await TaskModel.insert(data);
 	}
 
 
@@ -48,7 +50,11 @@ class TaskService extends BaseProjectService {
 		id,
 		forms
 	}) {
-		this.AppError('[报修]该功能暂不开放，如有需要请加作者微信：cclinux0730');
+		let data = {
+			TASK_FORMS: forms,
+			TASK_OBJ: dataUtil.dbForms2Obj(forms)
+		}
+		TaskModel.edit(id, data);
 	}
 
 	// 更新forms信息
@@ -56,13 +62,12 @@ class TaskService extends BaseProjectService {
 		id,
 		hasImageForms
 	}) {
-		this.AppError('[报修]该功能暂不开放，如有需要请加作者微信：cclinux0730');
+		TaskModel.insertOrUpdate(id,hasImageForms);
 	}
 
 	/**删除数据 */
 	async delTask(userId, id, isAdmin) {
-		this.AppError('[报修]该功能暂不开放，如有需要请加作者微信：cclinux0730');
-
+		TaskModel.del(id);
 	}
 
 
