@@ -16,6 +16,6 @@
 ![Alt text](./images/image-4.png)
 ![Alt text](./images/image-5.png)
 
-2. 上传云函数即可。
+2. 上传云函数即可
 
 ![Alt text](./images/image-6.png)
